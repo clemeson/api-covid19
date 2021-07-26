@@ -13,13 +13,16 @@
         {{>header}}
     </div>
 
+    <form action="" method="get">
+        <input id="get-name" type="text" name="state">
+    </form>
 
-    <a href="/infected">Infectados por regiões</a>
-    <a href="/death">Obitos por regiões</a>
-
-
-
-
+    {{#dados}}
+        <h1>{{state}} {{count}} </h1>
+    {{/dados}}
+    {{^dados}}
+    <h1>Por favor digite a sigla do Estado</h1>
+    {{/dados}}
 
     <div class="container-footer">
         {{>footer}}
@@ -27,7 +30,7 @@
 
     </div>
 
-
+    
     <script src="/js/script.js"></script>
 </body>
 </html>
