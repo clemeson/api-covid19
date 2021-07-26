@@ -14,3 +14,51 @@
     box-sizing: border-box;
 }
 
+.container-principal{
+  width: 60%;
+  margin: auto;
+}
+
+.container-header{
+  display: block;
+}
+.topo{
+  align-items: center;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+}
+
+.dash{
+  align-items: center;
+  height: 140px;
+  display: flex;
+  padding: 0 3rem;
+  justify-content: space-between;
+}
+
+.redirect-section{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.container-footer{
+  width: 60%;
+  position: absolute;
+  display: flex;
+  padding: 0 3rem;
+  bottom: 0;
+}
+
+.footer-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+

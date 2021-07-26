@@ -12,11 +12,11 @@
     <div class="container-header">
         {{>header}}
     </div>
-
+    {{dados.update}}
     <form action="" method="get">
         <input id="get-name" type="text" name="state">
     </form>
-
+    
     {{#dados}}
         <h1>{{state}} {{count}} </h1>
     {{/dados}}
