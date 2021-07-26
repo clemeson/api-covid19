@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
 app.engine('mustache', mustache(__dirname + '/views/partials', '.mustache'));
-app.set('view engine', 'mustache');
+app.set('view engine', 'mustache'); 
 app.set('views',__dirname + '/views/home');
 
 app.use('/', router);

@@ -4,30 +4,39 @@
 
 <body>
 
-    <div class="logo">
-     <a href="/">LogoTipo </a>
-    </div>
+    <div class="topo">
 
-    <div class="dash">
+        <div class="logo">
+        <a href="/">LogoTipo </a>
+        </div>
+
         <div class="lastupdate">
         <h2>Ultima atuliazção</h2>
         <p>{{data.lastUpdatedAtApify}}</p>
         </div>
 
-        <div class="Infected">
-        <h2>Infectados</h2>
-        <p>{{data.infected}}</p>
-        </div>
+    </div>
 
-        <div class="recovered">
-        <h2>Recuperados</h2>
+
+
+    <div class="dash">
+
+        <div class="dash-children">
+        <p>Recuperados</p>
         <p>{{data.recovered}}</p>
         </div>
 
-        <div class="deceased">
-        <h2>óbitos</h2>
-        <p>{{data.deceased}}</p>
+        <div class="dash-children">
+        <p>Infectados<p>
+        <p>{{data.infected}}</p>
         </div>
+
+
+        <div class="dash-children">
+        <p>Obitos</p>
+        <p>{{data.deceased}}</p>
+
+    </div>
         
         
     </div>
