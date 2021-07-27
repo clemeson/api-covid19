@@ -1,6 +1,7 @@
 
 :root {
-    --verde:#036B52;
+    --verde:#023031;
+    --verde-claro:#2FC18C;
     --azul:#3F91FC;
     --branco:#FFFFFF;
     --sombra:#dce0e4;
@@ -8,57 +9,87 @@
 
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
 
-.container-principal{
-  width: 60%;
-  margin: auto;
-}
+  .content-section{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .content-header{
+    color: var(--branco);
+    width: 60%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
 
-.container-header{
-  display: block;
-}
-.topo{
-  align-items: center;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 3rem;
-}
+  .container-principal{
 
-.dash{
-  align-items: center;
-  height: 140px;
-  display: flex;
-  padding: 0 3rem;
-  justify-content: space-between;
-}
+  }
 
-.redirect-section{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 3rem;
-}
+  .container-header{
+    align-items: center;
+    display: flex;
+    height: 100px;
+    background: #023031;
+  }
 
-.container-footer{
-  width: 60%;
-  position: absolute;
-  display: flex;
-  padding: 0 3rem;
-  bottom: 0;
-}
+  .dashboard{
+    align-items: center;
+    height: 100px ;
+    display: flex;
+    justify-content: space-between;
+    
+  }
 
-.footer-content{
-  display: flex;
-  justify-content: space-between;
-}
+  .box{
+    display: flex;
+  }
 
-
-
+  .card-btn{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
 
+  .card{
+    color: var(--branco);
+    background: #023031;
+    padding: 1rem;
+    border-radius: 10px;
+
+  }
+
+  .card h3{
+    border-radius: 5px;
+    border-bottom: 3px solid var(--azul);
+  }
+
+  .btn{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    gap: 1rem;
+    color: var(--branco);
+    background: #2FC18C;
+  }
+
+  .update{
+
+    background: var(--azul );
+    padding: .5rem;
+    border-radius: 10px;
+
+  }

@@ -5,7 +5,6 @@ const axios = require('axios')
 const app = express();
 
 router = require('./routes/router');
-
 /*
 
 app.use( async function(req,res,next){
@@ -14,7 +13,7 @@ app.use( async function(req,res,next){
         return res.locals.h = data
     } catch (error) {
         console.error(error)
-    }
+    } 
     next()
 })
 
@@ -26,7 +25,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.engine('mustache', mustache(__dirname + '/views/partials', '.mustache'));
 app.set('view engine', 'mustache'); 
-app.set('views',__dirname + '/views/home');
+app.set('views',__dirname + '/views');
 
 app.use('/', router);
 

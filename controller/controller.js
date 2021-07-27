@@ -6,7 +6,8 @@ exports.index = async (req,res)=>{
     try {
         const {data} = await axios.get('https://api.apify.com/v2/key-value-stores/TyToNta7jGKkpszMZ/records/LATEST?disableRedirect=true')
 
-       return res.render('index', {data})
+        const dados = data;
+       return res.render('index', {dados})
     } catch (error) {
         console.error(error)
     }
@@ -21,16 +22,14 @@ exports.infected = async (req,res)=>{
      
         const dados = data.infectedByRegion.filter(i => i.state == req.query.state)
 
-        dados.update = data.lastUpdatedAtApify;
-        dados.infectedTotal = data.infected
-        dados.deathTotal = data.deceased
-        dados.recoveredTotal = data.recovered
+        dados.lastUpdatedAtApify = data.lastUpdatedAtApify;
+        dados.infected = data.infected
+        dados.deceased = data.deceased
+        dados.recovered = data.recovered
         
 
 
-
-        console.log(dados)
-        return res.render('infected', {dados})
+        return res.render('index', {dados})
     } catch (error) {
         console.error(error)
     }
@@ -44,12 +43,12 @@ exports.death = async (req,res)=>{
      
         const dados = data.deceasedByRegion.filter(i => i.state == req.query.state)
 
-        dados.update = data.lastUpdatedAtApify;
-        dados.infectedTotal = data.infected
-        dados.deathTotal = data.deceased
-        dados.recoveredTotal = data.recovered
+        dados.lastUpdatedAtApify = data.lastUpdatedAtApify;
+        dados.infected = data.infected
+        dados.deceased = data.deceased
+        dados.recovered = data.recovered
 
-        return res.render('deaths', {dados})
+        return res.render('index', {dados})
     } catch (error) {
 
         console.error(error)

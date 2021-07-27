@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">   
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="container">
+    <div class="container-header">
+        <div class="content-header">
+
+            <div class="logo">
+                <h1>LogoTipo</h1>
+            </div>
+
+            <div class="update">
+                <h4>Ultima atualizacação</h4>
+                <h4>{{dados.lastUpdatedAtApify}}</h4>
+            </div>
+        </div>
+
+
+    </div>
+        <div class="container-section">
+
+        <div class="content-section">
+            <div class="dashboard">
+
+                <div class="card">
+                    <h3>Infectados</h3>
+                    <h2>{{dados.infected}}</h2>
+                </div>
+                <div class="card">
+                     <h3>Recuperados</h3>
+                    <h2>{{dados.recovered}}</h2>
+                </div>
+                <div class="card">
+                    <div class="star">
+                    </div>
+                    <div class="obt">
+                        <h3>Obitos</h3>
+                        <h2>{{dados.deceased}}</h2>
+                    </div>
+                </div>
+        </div>
+
+
+            
+            <div class=box>
+
+
+            </div>
+
+            <div class="card-btn">
+            <a href="/infected" class="btn">Infectados por região</a>
+            <a href="/death" class="btn">Mortes por região</a>
+
+
+             </div>
+
+
+
+
+        </div>
+    </div>
+
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
