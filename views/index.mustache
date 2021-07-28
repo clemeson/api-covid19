@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,66 +8,59 @@
     <title>{{title}}</title>
 </head>
 <body>
-    <div class="container">
-    <div class="container-header">
-        <div class="content-header">
+    <main>
+        <header>
+            <figure class="logo"><img src=""></figure>
+            <a href="/">Home</a>
+            <time><h4>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </h4> </time>
+        </header>
+        <section>
+            <h1>Dados do Corona-virus no Brasil
+            <article>
+                <h4>Infectados</h4>
+                <h3>{{dados.infected}}
+            </article>
 
-            <div class="logo">
-                <h1>LogoTipo</h1>
-            </div> 
+            <article>
+                <h4>Recuperados</h4>
+                <h3>{{dados.recovered}}
+            </article>
 
-            <div class="update">
-                <h4>Ultima atualizacação</h4>
-                <h4>{{dados.lastUpdatedAtApify}}</h4>
-            </div>
-        </div>
-
-
-    </div>
-        <div class="container-section">
-
-        <div class="content-section">
-            <div class="dashboard">
-
-                <div class="card">
-                    <h3>Infectados</h3>
-                    <h2>{{dados.infected}}</h2>
-                </div>
-                <div class="card">
-                     <h3>Recuperados</h3>
-                    <h2>{{dados.recovered}}</h2>
-                </div>
-                <div class="card">
-                    <div class="star">
-                    </div>
-                    <div class="obt">
-                        <h3>Obitos</h3>
-                        <h2>{{dados.deceased}}</h2>
-                    </div>
-                </div>
-        </div>
+            <article>
+                <h4>Obitos</h4>
+                <h3>{{dados.deceased}}
+            </article>
+        </section>
+        <section>
 
 
-            
-            <div class=box>
+            {{#dados.true}}
+                <article>
 
 
-            </div>
+                    <form method="get">
+                        <h1>Digite a sigla do seu estado</h1>
+                        <input type="text"  name="state">
+                    </form>
 
-            <div class="card-btn">
-            <a href="/infected" class="btn">Infectados por região</a>
-            <a href="/death" class="btn">Mortes por região</a>
+                </article>
+            {{/dados.true}}
 
+            {{^dados.true}}
+            <article>
+              <h1>Para ver os dados do corona-virus referente aos eu estado<br>
+              clique ou aperte no botão
+              </h1> 
+            <a href="/estado">Buscar por estados</a>
+            </article>
 
-             </div>
+            {{/dados.true}}
+        </section>
 
 
 
-
-        </div>
-    </div>
-
-
+        <footer>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam </footer>
+    </main>
     <script src="/js/script.js"></script>
 </body>
 </html>
