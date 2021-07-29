@@ -23,7 +23,7 @@ exports.estado = async (req,res)=>{
     
     try {
         const {data} = await axios.get('https://api.apify.com/v2/key-value-stores/TyToNta7jGKkpszMZ/records/LATEST?disableRedirect=true')
-
+        
      
         const dados = data.infectedByRegion.filter(i => i.state == req.query.state)
 
