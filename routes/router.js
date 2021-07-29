@@ -4,7 +4,6 @@ const controller = require('../controller/controller')
 
 
 router.get('/', controller.index)
-router.get('/estado', controller.estado)
 
 
 module.exports = router;

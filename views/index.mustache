@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">   
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     <title>{{title}}</title>
 </head>
 <body>
     <main>
         <header>
             <figure class="logo"><img src=""></figure>
-            <a href="/">Home</a>
             <time><h4>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </h4> </time>
         </header>
         <section>
@@ -36,13 +38,10 @@
 
             {{#dados.true}}
                 <article>
-
-
                     <form method="get">
                         <h1>Digite a sigla do seu estado</h1>
                         <input type="text"  name="state">
                     </form>
-
                 </article>
             {{/dados.true}}
 
@@ -57,10 +56,23 @@
             {{/dados.true}}
         </section>
 
+        <section>
+
+        {{#dados}}
+        <article>
+            <h1>{{state}}</h1>
+            <h2>{{count}}<h2>
+            <a href="/">Limpar</a>
+        <article>
+        {{/dados}}
+        </section>
+
 
 
         <footer>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam </footer>
     </main>
     <script src="/js/script.js"></script>
+
+
 </body>
 </html>
