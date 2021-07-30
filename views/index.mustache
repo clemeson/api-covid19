@@ -7,69 +7,87 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
     <title>{{title}}</title>
 </head>
 <body>
     <main>
         <header>
             <figure class="logo"><img src=""></figure>
+            <h3>Este web-service tem uma conexão direta com a <cite>API</cite> do ministério da saúde</h3>
+            <section class="time">
             <time><h4>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </h4> </time>
+            </section>
         </header>
-        <section>
-            <h1>Dados do Corona-virus no Brasil
-            <article>
-                <h4>Infectados</h4>
-                <h3>{{dados.infected}}
-            </article>
+            <section class="container-dash">
+                <section class="dash-title">
+                <h1>Dados do Corona-virus no Brasil</h1>
+                </section>
+                
+                <section class="dash-children">   
+                <article class="dash-box">
+                    <h4>Infectados</h4>
+                    <h2>{{dados.infected}}<h2>
+                </article>
 
-            <article>
-                <h4>Recuperados</h4>
-                <h3>{{dados.recovered}}
-            </article>
+                <article class="dash-box">
+                    <h4>Recuperados</h4>
+                    <h2>{{dados.recovered}}</h2>
+                </article>
 
-            <article>
-                <h4>Obitos</h4>
-                <h3>{{dados.deceased}}
-            </article>
+
+                <article class="dash-box">
+                    <h4>Obitos</h4>
+                    <h2>{{dados.deceased}}<h2>
+                </article>
+            </section>
+
         </section>
-        <section>
 
-
-            {{#dados.true}}
+          <section class="section-input">  
+         {{#dados.true}}
                 <article>
                     <form method="get">
-                        <h1>Digite a sigla do seu estado</h1>
-                        <input type="text"  name="state">
+                        <h1 class="title-input">Digite a sigla do seu estado</h1>
+                        <input class="input" type="text"  name="state" placeholder="Inserir sigla">
                     </form>
                 </article>
             {{/dados.true}}
 
-            {{^dados.true}}
-            <article>
-              <h1>Para ver os dados do corona-virus referente aos eu estado<br>
-              clique ou aperte no botão
-              </h1> 
-            <a href="/estado">Buscar por estados</a>
-            </article>
 
-            {{/dados.true}}
-        </section>
 
-        <section>
+        <section class="return">
 
         {{#dados}}
+            {{#dados.deceasedByRegion}}
+              <h1>Obitos</h1>  {{count}} 
+            {{/dados.deceasedByRegion}}
         <article>
             <h1>{{state}}</h1>
             <h2>{{count}}<h2>
             <a href="/">Limpar</a>
         <article>
         {{/dados}}
+
+        {{^dados}}
+        Por favor digite apenas a sigla do seu estado, exemplo: <strong>PE</strong>
+        {{/dados}}
+        </section>
         </section>
 
 
 
         <footer>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam </footer>
+    </main>
+    <script src="/js/script.js"></script>
+
+
+</body>
+</html>
+
+
     </main>
     <script src="/js/script.js"></script>
 

@@ -29,7 +29,6 @@ app.set('views',__dirname + '/views');
 
 app.use('/', router);
 
-
 module.exports = app;
 
 
