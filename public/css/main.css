@@ -42,7 +42,6 @@ header{
 
 .container-dash{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     gap: 1rem;
 }
@@ -66,7 +65,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     background: #252AFF;
     padding: 2rem;
@@ -75,12 +74,13 @@ header{
 }
 
 .section-input{
-    gap: 2rem;
+    margin-top: 3rem ;
+    gap: 3rem;
     font-size: 30px;
     color: var(--darkblue);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 
@@ -90,8 +90,47 @@ header{
 
 .return{
     display: flex;
+    flex-direction: column;
+}
+.article-return{
+    display: flex;
 }
 
+.article-input{
+
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+
+}
+
+
 .input{
-    width: ;
+    margin-top: 2rem;
+    margin-left: 2.1rem;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    border:4px solid #252AFF;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.return-section{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2.5rem;
+}
+.article-return{
+
+    font-size: 40px;
+    display: flex;
+    color: #00155F;
+}
+
+.article-return h1{
+    text-align: start;
 }

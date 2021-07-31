@@ -7,6 +7,7 @@ exports.index = async (req,res)=>{
         if(req.query.state){
             var ReqCaptialize = req.query.state.toUpperCase()
         }
+
         var dados = data.infectedByRegion.filter(i => i.state == ReqCaptialize)
         dados.deceasedByRegion = data.deceasedByRegion.filter(i => i.state ==  ReqCaptialize)
         dados.true = data.country

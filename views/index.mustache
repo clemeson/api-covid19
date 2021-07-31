@@ -21,12 +21,13 @@
             <time><h4>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </h4> </time>
             </section>
         </header>
-            <section class="container-dash">
-                <section class="dash-title">
+
+             <section class="dash-title">
                 <h1>Dados do Corona-virus no Brasil</h1>
                 </section>
+            <section class="container-dash">
                 
-                <section class="dash-children">   
+                <section class="dash-children">  
                 <article class="dash-box">
                     <h4>Infectados</h4>
                     <h2>{{dados.infected}}<h2>
@@ -49,32 +50,35 @@
           <section class="section-input">  
          {{#dados.true}}
                 <article>
-                    <form method="get">
+                    <form method="get" class="article-input">
                         <h1 class="title-input">Digite a sigla do seu estado</h1>
-                        <input class="input" type="text"  name="state" placeholder="Inserir sigla">
+                        <input class="input" type="text"  name="state" placeholder="Inserir sigla, Ex: PE">
                     </form>
                 </article>
             {{/dados.true}}
 
 
-
+         </section>
         <section class="return">
 
         {{#dados}}
+             <h1>Estado: {{state}}</h1>
             {{#dados.deceasedByRegion}}
-              <h1>Obitos</h1>  {{count}} 
+            <section class="return-section">
+                <article class="article-return">
+                    <h1>Obitos: {{count}}</h1> 
+                </article>
             {{/dados.deceasedByRegion}}
-        <article>
-            <h1>{{state}}</h1>
-            <h2>{{count}}<h2>
-            <a href="/">Limpar</a>
-        <article>
+                <article class="article-return">
+                    <h1>Infectados: {{count}}</h1>
+                </article>
+                 <a href="/">Limpar</a>
+                 </section>
         {{/dados}}
 
         {{^dados}}
         Por favor digite apenas a sigla do seu estado, exemplo: <strong>PE</strong>
         {{/dados}}
-        </section>
         </section>
 
 
@@ -82,7 +86,6 @@
         <footer>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam </footer>
     </main>
     <script src="/js/script.js"></script>
-
 
 </body>
 </html>
