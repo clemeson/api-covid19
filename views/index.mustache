@@ -18,7 +18,7 @@
             <div class="container-content">
 
                 <div class="content-header">
-                <figure class="logo"><img src="/img/star.png"></figure>
+                <figure class="logo"><img src="img/logo2.png"></figure>
                 <p>Este serviço tem uma conexão direta com a <cite>API</cite> do ministério da saúde</p>
                 <section class="time">
                 <time id="time"><p>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </p> </time>
@@ -28,13 +28,13 @@
         </header>
         <div class="container-content">
              <section class="dash-title">
-                <h1>Dados do Corona-virus no Brasil</h1>
+                <h1>Dados do Corona-Virus no Brasil</h1>
                 </section>
             <section class="container-dash">
                 
                 <section class="dash-children">  
                 <article class="card-box">
-                 <figure><img src="https://img.icons8.com/emoji/48/000000/face-with-medical-mask.png"/></figure>
+                 <figure><img src="img/mask.png"/></figure>
                 <article>
                     <h4>Infectados</h4>
                     <h2>{{dados.infected}}<h2>
@@ -42,7 +42,7 @@
                 </article>
 
                 <article class="card-box">
-                    <figure><img src="https://img.icons8.com/color/48/000000/recurring-appointment--v3.png"/></figure>
+                    <figure><img src="img/restart.png"/></figure>
                     <article>
                     <h4>Recuperados</h4>
                     <h2>{{dados.recovered}}</h2>
@@ -51,7 +51,7 @@
 
 
                 <article class="card-box">
-                 <figure><img src="https://img.icons8.com/doodle/48/000000/star--v1.png"/></figure>
+                 <figure><img src="img/star.png"/></figure>
                     <article>
                         <h4>Obitos</h4>
                         <h2>{{dados.deceased}}<h2>
@@ -66,7 +66,7 @@
                 <article>
                     <form method="get" class="article-input">
                         <h1 class="title-input">Buscar dados do corona-virus por Estados</h1>
-                        <input class="input" type="text"  name="state" placeholder="Inserir sigla do Estado, Ex: SP">
+                        <input class="input" type="text"  name="state" placeholder="Inserir sigla do Estado, Ex: SP" autofocus>
                     </form>
                 </article>
             {{/dados.true}}
