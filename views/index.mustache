@@ -15,34 +15,48 @@
 <body>
     <main>
         <header>
-            <figure class="logo"><img src=""></figure>
-            <h3>Este web-service tem uma conexão direta com a <cite>API</cite> do ministério da saúde</h3>
-            <section class="time">
-            <time><h4>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </h4> </time>
-            </section>
-        </header>
+            <div class="container-content">
 
+                <div class="content-header">
+                <figure class="logo"><img src="/img/star.png"></figure>
+                <p>Este serviço tem uma conexão direta com a <cite>API</cite> do ministério da saúde</p>
+                <section class="time">
+                <time id="time"><p>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </p> </time>
+                </section>
+                </div>
+            </div>
+        </header>
+        <div class="container-content">
              <section class="dash-title">
                 <h1>Dados do Corona-virus no Brasil</h1>
                 </section>
             <section class="container-dash">
                 
                 <section class="dash-children">  
-                <article class="dash-box">
+                <article class="card-box">
+                 <figure><img src="https://img.icons8.com/emoji/48/000000/face-with-medical-mask.png"/></figure>
+                <article>
                     <h4>Infectados</h4>
                     <h2>{{dados.infected}}<h2>
                 </article>
+                </article>
 
-                <article class="dash-box">
+                <article class="card-box">
+                    <figure><img src="https://img.icons8.com/color/48/000000/recurring-appointment--v3.png"/></figure>
+                    <article>
                     <h4>Recuperados</h4>
                     <h2>{{dados.recovered}}</h2>
+                    </article>
                 </article>
 
 
-                <article class="dash-box">
-                    <h4>Obitos</h4>
-                    <h2>{{dados.deceased}}<h2>
-                </article>
+                <article class="card-box">
+                 <figure><img src="https://img.icons8.com/doodle/48/000000/star--v1.png"/></figure>
+                    <article>
+                        <h4>Obitos</h4>
+                        <h2>{{dados.deceased}}<h2>
+                        <article>
+                    </article>
             </section>
 
         </section>
@@ -51,8 +65,8 @@
          {{#dados.true}}
                 <article>
                     <form method="get" class="article-input">
-                        <h1 class="title-input">Digite a sigla do seu estado</h1>
-                        <input class="input" type="text"  name="state" placeholder="Inserir sigla, Ex: PE">
+                        <h1 class="title-input">Buscar dados do corona-virus por Estados</h1>
+                        <input class="input" type="text"  name="state" placeholder="Inserir sigla do Estado, Ex: SP">
                     </form>
                 </article>
             {{/dados.true}}
@@ -62,35 +76,34 @@
         <section class="return">
 
         {{#dados}}
-             <h1>Estado: {{state}}</h1>
+
             {{#dados.deceasedByRegion}}
             <section class="return-section">
+            <h1>{{state}}</h1>
                 <article class="article-return">
-                    <h1>Obitos: {{count}}</h1> 
+                    <h1 class="text-input">Obitos: {{count}}</h1> 
                 </article>
             {{/dados.deceasedByRegion}}
                 <article class="article-return">
-                    <h1>Infectados: {{count}}</h1>
+                    <h1 class="text-input">Infectados: {{count}}</h1>
                 </article>
-                 <a href="/">Limpar</a>
+                 <a href="/" class="clean">Limpar</a>
                  </section>
-        {{/dados}}
-
-        {{^dados}}
-        Por favor digite apenas a sigla do seu estado, exemplo: <strong>PE</strong>
         {{/dados}}
         </section>
 
-
-
-        <footer>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam </footer>
+    {{^dados}}
+    <section class="foot-section">
+    <footer><p>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam</p> </footer>
+    </section>
+    {{/dados}}
     </main>
     <script src="/js/script.js"></script>
 
 </body>
 </html>
 
-
+    </div>
     </main>
     <script src="/js/script.js"></script>
 

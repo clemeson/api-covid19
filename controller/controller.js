@@ -11,7 +11,9 @@ exports.index = async (req,res)=>{
         var dados = data.infectedByRegion.filter(i => i.state == ReqCaptialize)
         dados.deceasedByRegion = data.deceasedByRegion.filter(i => i.state ==  ReqCaptialize)
         dados.true = data.country
-        dados.lastUpdatedAtApify = data.lastUpdatedAtApify;
+        dados.lastUpdatedAtApify  = data.lastUpdatedAtApify;
+     
+       // console.log(new Intl.DateTimeFormat('pt-BR').format(update))
         dados.infected = data.infected;
         dados.deceased = data.deceased;
         dados.recovered = data.recovered;
