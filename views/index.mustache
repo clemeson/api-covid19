@@ -4,109 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
     <title>{{title}}</title>
 </head>
 <body>
-    <main>
-        <header>
-            <div class="container-content">
-
-                <div class="content-header">
-                <figure class="logo"><img src="img/logo2.png"></figure>
-                <p>Este serviço tem uma conexão direta com a <cite>API</cite> do ministério da saúde</p>
-                <section class="time">
-                <time id="time"><p>Ultima Atualização <br> <strong> {{dados.lastUpdatedAtApify}}</strong> </p> </time>
-                </section>
-                </div>
+     <header>
+            <div class="container-header">
+            <figure class="logo"><img class="logo" src="img/logo2.png"></figure>
+            <h2>Este serviço tem uma conexão direta com a API do ministério da Saúde</h2>
+            <div class="time">
+            <p>Ultima Atualização</p>
+            <p>{{dados.update}}</p>
+            <time></time>
             </div>
-        </header>
-        <div class="container-content">
-             <section class="dash-title">
-                <h1>Dados do Corona-Virus no Brasil</h1>
-                </section>
-            <section class="container-dash">
-                
-                <section class="dash-children">  
-                <article class="card-box">
-                 <figure><img src="img/mask.png"/></figure>
-                <article>
-                    <h4>Infectados</h4>
-                    <h2>{{dados.infected}}<h2>
-                </article>
-                </article>
-
-                <article class="card-box">
-                    <figure><img src="img/restart.png"/></figure>
-                    <article>
-                    <h4>Recuperados</h4>
-                    <h2>{{dados.recovered}}</h2>
+            </div>
+    </header>
+    <main class="container-main">
+        <section class="container-return">
+            {{#dados}}
+                {{#dados.deceasedByRegion}}
+                    <div class="info-estado"><h1>Dados do corona virus por estado</h1></div>
+                    <section class="return-card">
+                    <h1>{{state}}</h1>
+                        <div class="return-child">
+                            <h1 class="text-input">Obitos: {{count}}</h1> 
+                        </div>
+                {{/dados.deceasedByRegion}}
+                    <div class="return-child">
+                            <h1 class="text-input">Infectados: {{count}}</h1>
+                        </div>
+                        </section>
+                        <a href="/" class="btn-clean">Voltar</a>
+            {{/dados}}
+        </section>
+        {{^dados}}
+            <section class="container-cards">
+                <h1 class="info-cards">Dados do Corona-Virus no Brasil</h1>
+                <div class="div-cards">
+                    <article class="cards">
+                        <figure><img src="img/mask.png" alt=""></figure>
+                        <div class="text-cards">
+                            <p>Infectados</p>
+                            <p>{{dados.infected}}</p>
+                        </div>
                     </article>
-                </article>
 
-
-                <article class="card-box">
-                 <figure><img src="img/star.png"/></figure>
-                    <article>
-                        <h4>Obitos</h4>
-                        <h2>{{dados.deceased}}<h2>
-                        <article>
+                    <article class="cards">
+                        <figure><img src="img/restart.png" alt=""></figure>
+                        <div class="text-cards">
+                            <p>Recuperados</p>
+                            <p>{{dados.recovered}}</p>
+                        </div>
                     </article>
+
+                    <article class="cards">
+                        <figure><img src="img/star.png" alt=""></figure>
+                        <div class="text-cards">
+                        <p>Obitos</p>
+                            <p>{{dados.deceased}}</p>
+                        </div>
+                    </article>
+                </div>
             </section>
-
-        </section>
-
-          <section class="section-input">  
-         {{#dados.true}}
-                <article>
-                    <form method="get" class="article-input">
-                        <h1 class="title-input">Buscar dados do corona-virus por Estados</h1>
-                        <input class="input" type="text"  name="state" placeholder="Inserir sigla do Estado, Ex: SP" autofocus>
-                    </form>
-                </article>
-            {{/dados.true}}
-
-
-         </section>
-        <section class="return">
-
-        {{#dados}}
-
-            {{#dados.deceasedByRegion}}
-            <section class="return-section">
-            <h1>{{state}}</h1>
-                <article class="article-return">
-                    <h1 class="text-input">Obitos: {{count}}</h1> 
-                </article>
-            {{/dados.deceasedByRegion}}
-                <article class="article-return">
-                    <h1 class="text-input">Infectados: {{count}}</h1>
-                </article>
-                 <a href="/" class="clean">Limpar</a>
-                 </section>
         {{/dados}}
+        <section class="container-getstate">
+            <h1 class="info-getstate">Buscar dados do Corona-Virus por Estados</h1>
+            <form class="form" method="get">
+                <input class="input" name="state" type="text" autofocus placeholder="Digite apenas a sigla do Estado">
+                <figure class="img-covid"><img src="img/covid-template.png" alt=""></figure>
+                <input type="submit" class="btn-send" value="enviar">
+            </form>
         </section>
 
-    {{^dados}}
-    <section class="foot-section">
-    <footer><p>Copyright | Clemeson Alves © | Rede Cidadã | Start-latam</p> </footer>
-    </section>
-    {{/dados}}
     </main>
+
     <script src="/js/script.js"></script>
-
-</body>
-</html>
-
-    </div>
-    </main>
-    <script src="/js/script.js"></script>
-
-
 </body>
 </html>

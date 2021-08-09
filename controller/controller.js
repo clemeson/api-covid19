@@ -12,12 +12,23 @@ exports.index = async (req,res)=>{
         dados.deceasedByRegion = data.deceasedByRegion.filter(i => i.state ==  ReqCaptialize)
         dados.true = data.country
         dados.lastUpdatedAtApify  = data.lastUpdatedAtApify;
-     
-       // console.log(new Intl.DateTimeFormat('pt-BR').format(update))
+        var update = new Date(dados.lastUpdatedAtApify)
+       // Formatando data de atualização
+        var dia = update.getDate()
+        console.log(update)
+        var mes = parseInt(update.getMonth()) + 1
+        var ano = update.getFullYear()
+        var dayMonthYear = `${dia}/${mes}/ ${ano}`
+        var minuto = update.getMinutes();
+        var hora = parseInt(update.getHours())
+
+        console.log(hora)
+        var segundos = update.getSeconds()
+        var minutesHoursSeconds = ` ${hora}:${minuto}:${segundos}`
+        console.log(dayMonthYear+' '+minutesHoursSeconds)
         dados.infected = data.infected;
         dados.deceased = data.deceased;
         dados.recovered = data.recovered;
-        
         return res.render('index', {dados})
     } catch (error) {
         console.error(error)
