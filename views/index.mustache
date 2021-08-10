@@ -12,22 +12,22 @@
 <body>
      <header>
             <div class="container-header">
-            <figure class="logo"><img class="logo" src="img/logo2.png"></figure>
-            <h2>Este serviço tem uma conexão direta com a API do ministério da Saúde</h2>
-            <div class="time">
-            <p>Ultima Atualização</p>
-            <p>{{dados.update}}</p>
-            <time></time>
-            </div>
+            <figure class="logo"><img class="logo" src="img/logo.png"></figure>
             </div>
     </header>
     <main class="container-main">
+        <section class="time">
+                <div>
+                <h1>Atualizado há {{dados.horas}} horas</h1>
+                </div>
+            
+            </section>
         <section class="container-return">
             {{#dados}}
                 {{#dados.deceasedByRegion}}
                     <div class="info-estado"><h1>Dados do corona virus por estado</h1></div>
                     <section class="return-card">
-                    <h1>{{state}}</h1>
+                    <h1 class="state">{{state}}</h1>
                         <div class="return-child">
                             <h1 class="text-input">Obitos: {{count}}</h1> 
                         </div>
@@ -70,10 +70,12 @@
             </section>
         {{/dados}}
         <section class="container-getstate">
-            <h1 class="info-getstate">Buscar dados do Corona-Virus por Estados</h1>
+            <div class="info-getstate">
+                <h1 class="info-getstate-child">Buscar dados do Corona-Virus por Estados</h1>
+                <h2 class="info-getstate-child">Digite apenas a Sigla do Estado, Ex: PE</h2>
+            </div>
             <form class="form" method="get">
                 <input class="input" name="state" type="text" autofocus placeholder="Digite apenas a sigla do Estado">
-                <figure class="img-covid"><img src="img/covid-template.png" alt=""></figure>
                 <input type="submit" class="btn-send" value="enviar">
             </form>
         </section>

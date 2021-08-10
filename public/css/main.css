@@ -9,7 +9,7 @@ html{
     font-family: 'Barlow', sans-serif;
 }
 header{
-    height: 70px;
+    height: 50px;
     background-color: blue;
     color: white;
 }
@@ -20,7 +20,7 @@ header{
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: .7rem;
 
 }
@@ -33,6 +33,9 @@ main{
 }
 .logo{
     width: 150px;
+}
+.time h1{
+    margin-top: 1rem;
 }
 .container-cards{
 
@@ -66,6 +69,7 @@ main{
 }
 
 .container-getstate{
+    height: 3rem;
     font-size: .6rem;
     display: flex;
     flex-direction: column;
@@ -73,13 +77,26 @@ main{
     width: 100%;
 }
 .info-getstate{
+margin: 1.5rem 1.5rem;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   transform: translateX(7%);
+}
+.info-getstate-child{
     margin-top: 1rem;
-    margin-bottom: 1rem;
-    transform: translateX(7%);
+}
+.state{
+    width: 40%;
+    color: blue;
+    background: white;
+    border-radius: 5px;
+    transform: translateX(80%);
 }
 .input{
+    border: 2px solid black;
     height: 2rem;
-    width: 30%;
+    width: 40%;
     transform: translateX(4%);
     text-align: center;
 }
@@ -90,30 +107,26 @@ main{
     align-items: center;
 }
 
-.img-covid{
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-}
 .img-covid img{
     width: 15%;
     transform: translateX(12%);
 }
 .btn-clean{
-    background: darkblue;
+    background: blue;
     margin-top: .5rem;
     border: none;
     color: white;
     padding: .5rem;
     border-radius: 3px;
     width: 20%;
-    transform: translateX(15%);
+    transform: translateX(12%);
     transition: all ease .3s;
 
 }
 .btn-clean:hover{
-    background: blue;
-    color: white;
+    background: white;
+    color: blue;
+    border: 0.1px solid blue;
 
 }
 
@@ -123,15 +136,15 @@ main{
     padding: .3rem;
     border-radius: 3px;
     margin: 1.5rem;
-    width: 8%;
-    transform: translateX(22%);
+    width: 20%;
     background: blue;
     cursor: pointer;
     visibility: hidden;
 }
-.btn-send:focus{
-    transition: transform 1s;
-    transform: translateX(5px) scale(1.4);
+.btn-send:hover{
+    background: white;
+    color: blue;
+    border: 1px solid blue;
 
 }
 
